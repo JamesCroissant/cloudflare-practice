@@ -3,6 +3,7 @@
 // Runtime types generated with workerd@1.20250508.0 2025-03-01 global_fetch_strictly_public,nodejs_compat
 declare namespace Cloudflare {
 	interface Env {
+		SECRET_KEY: string;
 		NEXTJS_ENV: string;
 		ASSETS: Fetcher;
 	}

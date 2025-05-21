@@ -1,7 +1,7 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 
-export async function GET(req: Request) {
-  const { env } = getCloudflareContext();
+export async function GET() {
+  const { env } = await getCloudflareContext();
   console.log('env', env);
 
   return Response.json({
