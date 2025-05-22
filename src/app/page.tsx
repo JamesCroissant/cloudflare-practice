@@ -7,13 +7,18 @@ export default function Page() {
   const [response, setResponse] = useState("");
 
   const handleSend = async () => {
-    const res = await fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: input }),
-    });
-    const data = await res.json();
-    setResponse(data.reply);
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input }),
+      });
+      const data = await res.json();
+      console.log(`data`, data)
+      setResponse(data.reply);
+    } catch (error) {
+      console.error('hello error', error);
+    }
   };
 
   return (
